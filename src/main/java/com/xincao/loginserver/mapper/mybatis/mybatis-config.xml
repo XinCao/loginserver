@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC  
+    "-//mybatis.org//DTD Config 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>
+
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+<!--        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>-->
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="com.todo.model.User" alias="User"/>
+        <typeAlias type="com.todo.model.Task" alias="Task"/>
+        <typeAlias type="com.todo.model.Schedule" alias="Schedule"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="com/todo/mapper/mybatis/UserMapper.xml" />
+        <mapper resource="com/todo/mapper/mybatis/TaskMapper.xml" />
+        <mapper resource="com/todo/mapper/mybatis/ScheduleMapper.xml" />
+    </mappers>
+
+</configuration>

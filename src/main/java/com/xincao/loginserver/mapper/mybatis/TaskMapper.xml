@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.todo.mapper.TaskMapper">
+
+    <sql id="taskColumns"> `sendor_account` , `receiver_account` , `task_title` , `task_content` , `finish_time` , `first_remind_time` , `second_remind_time` , `priority`, `media`, `status`</sql>
+
+    <resultMap id="taskMap" type="com.todo.model.Task">
+        <result property="id" column="id" />
+        <result property="sendorAccount" column="sendor_account"/>
+        <result property="receiverAccount" column="receiver_account"/>
+        <result property="taskTitle" column="task_title"/>
+        <result property="taskContent" column="task_content"/>
+        <result property="finishTime" column="finish_time"/>
+        <result property="firstRemindTime" column="first_remind_time"/>
+        <result property="secondRemindTime" column="second_remind_time"/>
+        <result property="priority" column="priority"/>
+        <result property="media" column="media"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+    <insert id="insertTask" parameterType="Task">
+        INSERT INTO task (<include refid="taskColumns"/>) VALUES (#{sendorAccount}, #{receiverAccount}, #{taskTitle}, #{taskContent}, #{finishTime}, #{firstRemindTime}, #{secondRemindTime}, #{priority}, #{media}, #{status})
+    </insert>
+
+    <delete id="deleteTask" parameterType="Task">
+        DELETE FROM task
+        <where>
+            <if test="sendorAccount != null">and sendor_account=#{sendorAccount}</if>
+            <if test="receiverAccount != null">and receiver_account=#{receiverAccount}</if>
+        </where>
+    </delete>
+
+    <update id="updateTask" parameterType="Task">
+        UPDATE task
+        <set>
+            <if test="sendorAccount != null">and sendor_account=#{sendorAccount}</if>
+            <if test="receiverAccount != null">and receiver_account=#{receiverAccount}</if>
+            <if test="taskTitle != null">and task_title=#{taskTitle}</if>
+            <if test="taskContent != null">and task_content=#{taskContent}</if>
+            <if test="finishTime != null">and finish_time=#{finishTime}</if>
+            <if test="firstRemindTime != null">and first_remind_time=#{firstRemindTime}</if>
+            <if test="secondRemindTime != null">and second_remind_time=#{secondRemindTime}</if>
+            <if test="priority != null">and priority=#{priority}</if>
+            <if test="media != null">and media=#{media}</if>
+            <if test="status != null">and status=#{status}</if>
+        </set>
+        <where>
+            <if test="sendorAccount != null">and sendor_account=#{sendorAccount}</if>
+            <if test="receiverAccount != null">and receiver_account=#{receiverAccount}</if>
+        </where>
+    </update>
+
+    <select id="selectTask" parameterType="Task" resultMap="taskMap">
+        SELECT `id`, <include refid="taskColumns"/>  from task
+        <where>
+            <if test="sendorAccount != null">and sendor_account=#{sendorAccount}</if>
+            <if test="receiverAccount != null">and receiver_account=#{receiverAccount}</if>
+        </where>
+        limit 1
+    </select>
+
+    <select id="selectTaskList" parameterType="Task" resultMap="taskMap">
+        SELECT `id`, <include refid="taskColumns"/>  from task
+        <where>
+            <if test="sendorAccount != null">and sendor_account=#{sendorAccount}</if>
+            <if test="receiverAccount != null">and receiver_account=#{receiverAccount}</if>
+        </where>
+    </select>
+
+    <cache />
+</mapper>
