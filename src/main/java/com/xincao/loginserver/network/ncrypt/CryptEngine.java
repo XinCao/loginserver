@@ -1,7 +1,7 @@
 package com.xincao.loginserver.network.ncrypt;
 
 //~--- non-JDK imports --------------------------------------------------------
-import com.xincao.common_util.Rnd;
+import com.xincao.common_util.math.Rnd;
 
 /**
  * Crypto engine for ecnrypting/decrypting packets, error handling and verifying

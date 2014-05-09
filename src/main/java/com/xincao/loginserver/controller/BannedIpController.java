@@ -1,7 +1,7 @@
 package com.xincao.loginserver.controller;
 
 import com.xincao.common_configuration.Util;
-import com.xincao.common_util.NetworkUtils;
+import com.xincao.common_util.tool.Validate;
 import com.xincao.loginserver.mapper.BannedIpMapper;
 import java.sql.Timestamp;
 import java.util.Iterator;
@@ -52,7 +52,7 @@ public class BannedIpController {
      */
     public boolean isBanned(String ip) {
         for (BannedIP ipBan : banList) {
-            if (ipBan.isActive() && NetworkUtils.checkIPMatching(ipBan.getMask(), ip)) {
+            if (ipBan.isActive() && Validate.checkIPMatching(ipBan.getMask(), ip)) {
                 return true;
             }
         }

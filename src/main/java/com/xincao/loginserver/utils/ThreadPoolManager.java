@@ -2,7 +2,7 @@ package com.xincao.loginserver.utils;
 
 import com.xincao.common_nio.DisconnectionTask;
 import com.xincao.common_nio.DisconnectionThreadPool;
-import com.xincao.common_util.ScheduledThreadPoolExecutorAE;
+import com.xincao.common_util.concurrent.IScheduledThreadPoolExecutor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledFuture;
@@ -29,11 +29,11 @@ public class ThreadPoolManager implements DisconnectionThreadPool {
     /**
      * STPE for normal scheduled tasks
      */
-    private ScheduledThreadPoolExecutorAE scheduledThreadPool;
+    private IScheduledThreadPoolExecutor scheduledThreadPool;
     /**
      * STPE for disconnection tasks
      */
-    private ScheduledThreadPoolExecutorAE disconnectionScheduledThreadPool;
+    private IScheduledThreadPoolExecutor disconnectionScheduledThreadPool;
     /**
      * TPE for execution of gameserver client packets
      */
@@ -50,10 +50,10 @@ public class ThreadPoolManager implements DisconnectionThreadPool {
      * Constructor.
      */
     private ThreadPoolManager() {
-        scheduledThreadPool = new ScheduledThreadPoolExecutorAE(4, new PriorityThreadFactory("ScheduledThreadPool", Thread.NORM_PRIORITY));
+        scheduledThreadPool = new IScheduledThreadPoolExecutor(4, new PriorityThreadFactory("ScheduledThreadPool", Thread.NORM_PRIORITY));
         //不知道为什么不存在，这个方法
 //        scheduledThreadPool.setRemoveOnCancelPolicy(true);
-        disconnectionScheduledThreadPool = new ScheduledThreadPoolExecutorAE(4, new PriorityThreadFactory("ScheduledThreadPool", Thread.NORM_PRIORITY));
+        disconnectionScheduledThreadPool = new IScheduledThreadPoolExecutor(4, new PriorityThreadFactory("ScheduledThreadPool", Thread.NORM_PRIORITY));
 //        disconnectionScheduledThreadPool.setRemoveOnCancelPolicy(true);
         gameServerPacketsThreadPool = new ThreadPoolExecutor(4, Integer.MAX_VALUE, 5L, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(), new PriorityThreadFactory("Game Server Packet Pool", Thread.NORM_PRIORITY + 3));
     }

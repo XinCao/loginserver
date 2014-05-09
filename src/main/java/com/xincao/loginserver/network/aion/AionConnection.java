@@ -1,7 +1,7 @@
 package com.xincao.loginserver.network.aion;
 
-import com.xincao.common_nio.AConnection;
-import com.xincao.common_nio.Dispatcher;
+import com.xincao.common_nio.IConnection;
+import com.xincao.common_nio.IODispatcher;
 import com.xincao.common_nio.PacketProcessor;
 import com.xincao.loginserver.controller.AccountController;
 import com.xincao.loginserver.controller.AccountTimeController;
@@ -28,7 +28,7 @@ import org.springframework.context.ApplicationContext;
  *
  * @author -Nemesiss-
  */
-public class AionConnection extends AConnection {
+public class AionConnection extends IConnection {
 
     /**
      * Logger for this class.
@@ -101,7 +101,7 @@ public class AionConnection extends AConnection {
      * @param d
      * @throws IOException
      */
-    public AionConnection(SocketChannel sc, Dispatcher d) throws IOException {
+    public AionConnection(SocketChannel sc, IODispatcher d) throws IOException {
         super(sc, d);
         state = State.CONNECTED;
         String ip = getIP();

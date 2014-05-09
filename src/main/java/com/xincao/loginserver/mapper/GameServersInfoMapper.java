@@ -7,7 +7,7 @@ import java.util.Map;
  *
  * @author caoxin
  */
-public interface GameServersMapper {
+public interface GameServersInfoMapper {
 
     /**
      * Returns all gameservers from database.

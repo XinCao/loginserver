@@ -1,6 +1,6 @@
 package com.xincao.loginserver.network.aion;
 
-import com.xincao.common_util.Rnd;
+import com.xincao.common_util.math.Rnd;
 import com.xincao.loginserver.model.Account;
 
 /**

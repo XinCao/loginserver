@@ -1,9 +1,9 @@
 -- ----------------------------
--- account_data
+-- account
 -- ----------------------------
 
-DROP TABLE IF EXISTS `account_data`;
-CREATE TABLE `account_data` (
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE `account` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(45) NOT NULL,
   `password` varchar(65) NOT NULL,

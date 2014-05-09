@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xincao.loginserver.mapper.AccountMapper">
+
+    <sql id="accountColumns">`name`, `password`, `activated`, `access_level`, `membership`, `last_server`, `last_ip`, `ip_force`</sql>
+
+    <resultMap id="accountMap" type="Account">
+        <result property="id" column="id" />
+        <result property="name" column="name"/>
+        <result property="passwordHash" column="password"/>
+        <result property="activated" column="activated"/>
+        <result property="accessLevel" column="access_level"/>
+        <result property="membership" column="membership"/>
+        <result property="lastServer" column="last_server"/>
+        <result property="lastIp" column="last_ip"/>
+        <result property="ipForce" column="ip_force"/>
+        <!--<result property="accountTime"/>-->
+    </resultMap>
+
+    <insert id="insertAccount" parameterType="Account">
+        INSERT INTO account (<include refid="accountColumns"/>) VALUES (#{name},#{passwordHash},#{activated},#{accessLevel},#{membership},#{lastServer},#{lastIp},#{ipForce})
+    </insert>
+
+    <update id="updateLastServer" parameterType="Account">
+        UPDATE account
+        <set>
+            <if test="lastServer != null">`last_server`=#{lastServer},</if>
+            <if test="lastIp != null">`last_ip`=#{lastIp},</if>
+        </set>
+        WHERE
+        id=#{id}
+    </update>
+
+    <select id="getAccount" parameterType="String" resultMap="accountMap">
+        SELECT `id`, <include refid="accountColumns"/> from account
+        WHERE
+        name=#{name}
+    </select>
+
+    <select id="getAccountId" parameterType="String" resultType="int">
+        SELECT `id` from account
+        WHERE
+        name=#{name}
+    </select>
+
+    <select id="getAccountCount" resultType="int">
+        SELECT count(*) AS count from account
+    </select>
+
+</mapper>

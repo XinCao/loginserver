@@ -1,6 +1,6 @@
 package com.xincao.loginserver.utils;
 
-import com.xincao.common_util.Base64;
+import com.xincao.common_util.math.Base64;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.io.UnsupportedEncodingException;

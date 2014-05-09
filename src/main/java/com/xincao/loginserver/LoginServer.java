@@ -1,12 +1,12 @@
 package com.xincao.loginserver;
 
 import com.xincao.common_configuration.Util;
-import com.xincao.common_util.AEInfos;
-import com.xincao.common_util.ExitCode;
+import com.xincao.common_util.tool.Infos;
+import com.xincao.common_util.constant.ExitCode;
+import com.xincao.common_util.tool.DeadLockDetector;
 import com.xincao.loginserver.configs.Config;
 import com.xincao.loginserver.network.IOServer;
 import com.xincao.loginserver.network.ncrypt.KeyGen;
-import com.xincao.loginserver.utils.DeadLockDetector;
 import com.xincao.loginserver.utils.ThreadPoolManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,7 @@ public class LoginServer {
         /**
          * Start deadlock detector that will restart server if deadlock happened
          */
-        new DeadLockDetector(60, DeadLockDetector.RESTART).start(); // 检查死锁
+        DeadLockDetector.detector(60, DeadLockDetector.Dealt.RESTART); // 检查死锁
         ThreadPoolManager.getInstance();
         /**
          * Initialize Key Generator
@@ -40,7 +40,7 @@ public class LoginServer {
         IOServer.getInstance().connect();
         Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
         Util.printSection("System");
-        AEInfos.printAllInfos();
+        Infos.printAllInfos();
         Util.printSection("LoginServerLog");
         log.info("AE Login Server started in " + (System.currentTimeMillis() - start) / 1000 + " seconds.");
     }

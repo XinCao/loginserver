@@ -1,7 +1,7 @@
 package com.xincao.loginserver.network.gameserver;
 
-import com.xincao.common_nio.AConnection;
-import com.xincao.common_nio.Dispatcher;
+import com.xincao.common_nio.IConnection;
+import com.xincao.common_nio.IODispatcher;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author -Nemesiss-
  */
-public class GsConnection extends AConnection {
+public class GsConnection extends IConnection {
 
     /**
      * Logger for this class.
@@ -58,7 +58,7 @@ public class GsConnection extends AConnection {
      * @param d
      * @throws IOException
      */
-    public GsConnection(SocketChannel sc, Dispatcher d) throws IOException {
+    public GsConnection(SocketChannel sc, IODispatcher d) throws IOException {
         super(sc, d);
         state = State.CONNECTED;
         String ip = getIP();

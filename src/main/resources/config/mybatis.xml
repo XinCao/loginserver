@@ -39,15 +39,15 @@
             <value>60000</value>
         </property>
     </bean>
-    <bean id="poolableConnectionFactory" class="com.todo.service.PoolableConnectionFactoryAE">
+    <bean id="poolableConnectionFactory" class="com.xincao.loginserver.utils.PoolableConnectionFactoryAE">
         <constructor-arg index="0">
             <ref bean="connectionFactory"/>
         </constructor-arg>
         <constructor-arg index="1">
             <ref bean="connectionPool"/>
         </constructor-arg>
-        <constructor-arg index="2">
-            <null/>
+        <constructor-arg index="2"> 
+           <null/>
         </constructor-arg>
         <constructor-arg index="3">
             <value>${database.validation_timeout}</value>

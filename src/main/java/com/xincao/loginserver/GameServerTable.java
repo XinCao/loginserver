@@ -6,8 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import com.xincao.common_nio.IPRange;
-import com.xincao.common_util.NetworkUtils;
-import com.xincao.loginserver.mapper.GameServersMapper;
+import com.xincao.common_util.tool.Validate;
+import com.xincao.loginserver.mapper.GameServersInfoMapper;
 import com.xincao.loginserver.model.Account;
 import com.xincao.loginserver.network.gameserver.GsAuthResponse;
 import com.xincao.loginserver.network.gameserver.GsConnection;
@@ -28,7 +28,7 @@ public class GameServerTable {
 
     private static final Logger log = LoggerFactory.getLogger(GameServerTable.class);
     @Autowired
-    private GameServersMapper gameServersMapper;
+    private GameServersInfoMapper gameServersMapper;
     private static Map<Byte, GameServerInfo> gameservers;
 
     /**
@@ -82,7 +82,7 @@ public class GameServerTable {
         /**
          * Check if password and ip are ok.
          */
-        if (!gsi.getPassword().equals(password) || !NetworkUtils.checkIPMatching(gsi.getIp(), gsConnection.getIP())) {
+        if (!gsi.getPassword().equals(password) || !Validate.checkIPMatching(gsi.getIp(), gsConnection.getIP())) {
             log.info(gsConnection + " wrong ip or password!");
             return GsAuthResponse.NOT_AUTHED;
         }

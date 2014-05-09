@@ -1,8 +1,8 @@
 package com.xincao.loginserver.network.gameserver;
 
-import com.xincao.common_nio.AConnection;
+import com.xincao.common_nio.IConnection;
 import com.xincao.common_nio.ConnectionFactory;
-import com.xincao.common_nio.Dispatcher;
+import com.xincao.common_nio.IODispatcher;
 import java.io.IOException;
 import java.nio.channels.SocketChannel;
 
@@ -29,7 +29,7 @@ public class GsConnectionFactoryImpl implements ConnectionFactory {
      * @see com.aionemu.commons.network.Dispatcher
      */
     @Override
-    public AConnection create(SocketChannel socket, Dispatcher dispatcher) throws IOException {
+    public IConnection create(SocketChannel socket, IODispatcher dispatcher) throws IOException {
         return new GsConnection(socket, dispatcher);
     }
 }

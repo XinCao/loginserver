@@ -1,6 +1,6 @@
 package com.xincao.loginserver.controller;
 
-import com.xincao.common_util.NetworkUtils;
+import com.xincao.common_util.tool.Validate;
 import java.util.HashMap;
 import java.util.Map;
 import com.xincao.loginserver.GameServerInfo;
@@ -87,7 +87,7 @@ public class AccountController {
                 gsi.addAccountToGameServer(acc);
 
                 acc.setLastServer(gsi.getId());
-                accountMapper.updateLastServer(acc.getId(), acc.getLastServer());
+                accountMapper.updateAccount(acc);
 
                 /**
                  * Send response to GameServer
@@ -175,7 +175,7 @@ public class AccountController {
 
         // if account is restricted to some ip or mask
         if (account.getIpForce() != null) {
-            if (!NetworkUtils.checkIPMatching(account.getIpForce(), connection.getIP())) {
+            if (!Validate.checkIPMatching(account.getIpForce(), connection.getIP())) {
                 return AionAuthResponse.BAN_IP;
             }
         }
@@ -208,7 +208,7 @@ public class AccountController {
         accountTimeController.updateOnLogin(account);
 
         // if everything was OK
-        accountMapper.updateLastIp(account.getId(), connection.getIP());
+        accountMapper.updateAccount(account);
 
         return AionAuthResponse.AUTHED;
     }

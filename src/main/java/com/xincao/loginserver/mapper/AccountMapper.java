@@ -35,29 +35,10 @@ public interface AccountMapper {
     public boolean insertAccount(Account account);
 
     /**
-     * Updates account in database
+     * Updates lastServer or lastIp field of account
      *
-     * @param account account to update
-     * @return true if was updated, false in other case
-     */
-    public boolean updateAccount(Account account);
-
-    /**
-     * Updates lastServer field of account
-     *
-     * @param accountId account id
-     * @param lastServer last accessed server
+     * @param account
      * @return was updated successful or not
      */
-    public boolean updateLastServer(int accountId, byte lastServer);
-
-    /**
-     * Updates last ip that was used to access an account
-     *
-     * @param accountId account id
-     * @param ip ip address
-     * @return was update successful or not
-     */
-    public boolean updateLastIp(int accountId, String ip);
-
+    public boolean updateAccount(Account account);
 }

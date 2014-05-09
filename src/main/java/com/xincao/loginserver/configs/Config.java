@@ -3,7 +3,7 @@ package com.xincao.loginserver.configs;
 import com.xincao.common_configuration.ConfigurableProcessor;
 import com.xincao.common_configuration.Property;
 import com.xincao.common_configuration.Util;
-import com.xincao.common_util.PropertiesUtils;
+import com.xincao.common_util.tool.PropertiesReader;
 import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,7 +71,7 @@ public class Config {
         try {
             Util.printSection("Network");
             String network = "./config/network";
-            Properties[] props = PropertiesUtils.loadAllFromDirectory(network);
+            Properties[] props = PropertiesReader.loadAllFromDirectory(network);
             ConfigurableProcessor.process(Config.class, props);
             log.info("Loading: " + network + "/network.properties");
         } catch (Exception e) {

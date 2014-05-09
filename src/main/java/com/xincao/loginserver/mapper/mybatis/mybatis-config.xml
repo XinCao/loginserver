@@ -11,15 +11,17 @@
     </settings>
 
     <typeAliases>
-        <typeAlias type="com.todo.model.User" alias="User"/>
-        <typeAlias type="com.todo.model.Task" alias="Task"/>
-        <typeAlias type="com.todo.model.Schedule" alias="Schedule"/>
+        <typeAlias type="com.xincao.loginserver.model.Account" alias="Account"/>
+        <typeAlias type="com.xincao.loginserver.model.AccountTime" alias="AccountTime"/>
+        <typeAlias type="com.xincao.loginserver.model.BannedIP" alias="BannedIP"/>
+        <typeAlias type="com.xincao.loginserver.GameServerInfo" alias="GameServerInfo"/>
     </typeAliases>
 
     <mappers>
-        <mapper resource="com/todo/mapper/mybatis/UserMapper.xml" />
-        <mapper resource="com/todo/mapper/mybatis/TaskMapper.xml" />
-        <mapper resource="com/todo/mapper/mybatis/ScheduleMapper.xml" />
+        <mapper resource="com/xincao/loginserver/model/AccountMapper.xml" />
+        <mapper resource="com/xincao/loginserver/model/AccountTimeMapper.xml" />
+        <mapper resource="com/xincao/loginserver/model/BannedIPMapper.xml" />
+        <mapper resource="com/xincao/loginserver/GameServerInfoMapper.xml" />
     </mappers>
 
 </configuration>
