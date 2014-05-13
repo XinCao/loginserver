@@ -1,6 +1,6 @@
 package com.xincao.loginserver.network.ncrypt;
 
-import com.xincao.common_util.math.Rnd;
+import com.xincao.common.util.math.Rnd;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;

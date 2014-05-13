@@ -1,6 +1,6 @@
 package com.xincao.loginserver.controller;
 
-import com.xincao.common_util.tool.Validate;
+import com.xincao.common.util.tool.Validate;
 import java.util.HashMap;
 import java.util.Map;
 import com.xincao.loginserver.GameServerInfo;

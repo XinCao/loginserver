@@ -1,12 +1,12 @@
 package com.xincao.loginserver;
 
-import com.xincao.common_configuration.Util;
+import com.xincao.common.configuration.Util;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import com.xincao.common_nio.IPRange;
-import com.xincao.common_util.tool.Validate;
+import com.xincao.common.nio.IPRange;
+import com.xincao.common.util.tool.Validate;
 import com.xincao.loginserver.mapper.GameServersInfoMapper;
 import com.xincao.loginserver.model.Account;
 import com.xincao.loginserver.network.gameserver.GsAuthResponse;

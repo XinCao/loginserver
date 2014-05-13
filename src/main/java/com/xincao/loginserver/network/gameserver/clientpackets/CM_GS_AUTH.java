@@ -1,6 +1,6 @@
 package com.xincao.loginserver.network.gameserver.clientpackets;
 
-import com.xincao.common_nio.IPRange;
+import com.xincao.common.nio.IPRange;
 import com.xincao.loginserver.GameServerTable;
 import com.xincao.loginserver.network.gameserver.GsAuthResponse;
 import com.xincao.loginserver.network.gameserver.GsClientPacket;

@@ -1,9 +1,9 @@
 package com.xincao.loginserver.configs;
 
-import com.xincao.common_configuration.ConfigurableProcessor;
-import com.xincao.common_configuration.Property;
-import com.xincao.common_configuration.Util;
-import com.xincao.common_util.tool.PropertiesReader;
+import com.xincao.common.configuration.ConfigurableProcessor;
+import com.xincao.common.configuration.Property;
+import com.xincao.common.configuration.Util;
+import com.xincao.common.util.tool.PropertiesReader;
 import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

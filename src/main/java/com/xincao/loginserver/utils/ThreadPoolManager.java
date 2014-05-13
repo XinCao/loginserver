@@ -1,8 +1,8 @@
 package com.xincao.loginserver.utils;
 
-import com.xincao.common_nio.DisconnectionTask;
-import com.xincao.common_nio.DisconnectionThreadPool;
-import com.xincao.common_util.concurrent.IScheduledThreadPoolExecutor;
+import com.xincao.common.nio.DisconnectionTask;
+import com.xincao.common.nio.DisconnectionThreadPool;
+import com.xincao.common.util.concurrent.IScheduledThreadPoolExecutor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledFuture;

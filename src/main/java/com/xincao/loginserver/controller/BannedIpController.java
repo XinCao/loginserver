@@ -1,7 +1,7 @@
 package com.xincao.loginserver.controller;
 
-import com.xincao.common_configuration.Util;
-import com.xincao.common_util.tool.Validate;
+import com.xincao.common.configuration.Util;
+import com.xincao.common.util.tool.Validate;
 import com.xincao.loginserver.mapper.BannedIpMapper;
 import java.sql.Timestamp;
 import java.util.Iterator;

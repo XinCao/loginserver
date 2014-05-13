@@ -1,9 +1,9 @@
 package com.xincao.loginserver;
 
-import com.xincao.common_configuration.Util;
-import com.xincao.common_util.tool.Infos;
-import com.xincao.common_util.constant.ExitCode;
-import com.xincao.common_util.tool.DeadLockDetector;
+import com.xincao.common.configuration.Util;
+import com.xincao.common.util.tool.Infos;
+import com.xincao.common.util.constant.ExitCode;
+import com.xincao.common.util.tool.DeadLockDetector;
 import com.xincao.loginserver.configs.Config;
 import com.xincao.loginserver.network.IOServer;
 import com.xincao.loginserver.network.ncrypt.KeyGen;

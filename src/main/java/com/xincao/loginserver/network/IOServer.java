@@ -1,7 +1,7 @@
 package com.xincao.loginserver.network;
 
-import com.xincao.common_nio.NioServer;
-import com.xincao.common_nio.ServerCfg;
+import com.xincao.common.nio.NioServer;
+import com.xincao.common.nio.ServerCfg;
 import com.xincao.loginserver.configs.Config;
 import com.xincao.loginserver.network.aion.AionConnectionFactoryImpl;
 import com.xincao.loginserver.network.gameserver.GsConnectionFactoryImpl;

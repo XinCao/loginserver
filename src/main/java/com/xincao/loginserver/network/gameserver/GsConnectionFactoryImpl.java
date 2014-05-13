@@ -1,8 +1,8 @@
 package com.xincao.loginserver.network.gameserver;
 
-import com.xincao.common_nio.IConnection;
-import com.xincao.common_nio.ConnectionFactory;
-import com.xincao.common_nio.IODispatcher;
+import com.xincao.common.nio.IConnection;
+import com.xincao.common.nio.ConnectionFactory;
+import com.xincao.common.nio.IODispatcher;
 import java.io.IOException;
 import java.nio.channels.SocketChannel;
 

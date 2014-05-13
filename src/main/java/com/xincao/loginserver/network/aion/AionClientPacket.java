@@ -1,6 +1,6 @@
 package com.xincao.loginserver.network.aion;
 
-import com.xincao.common_nio.packet.BaseClientPacket;
+import com.xincao.common.nio.packet.BaseClientPacket;
 import com.xincao.loginserver.model.Account;
 import com.xincao.loginserver.utils.AC;
 import java.nio.ByteBuffer;

@@ -1,6 +1,6 @@
 package com.xincao.loginserver.network.gameserver.clientpackets;
 
-import com.xincao.common_util.math.Rnd;
+import com.xincao.common.util.math.Rnd;
 import com.xincao.loginserver.controller.AccountController;
 import com.xincao.loginserver.model.Account;
 import com.xincao.loginserver.model.ReconnectingAccount;

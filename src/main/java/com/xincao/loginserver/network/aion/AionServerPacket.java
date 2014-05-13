@@ -1,6 +1,6 @@
 package com.xincao.loginserver.network.aion;
 
-import com.xincao.common_nio.packet.BaseServerPacket;
+import com.xincao.common.nio.packet.BaseServerPacket;
 import com.xincao.loginserver.utils.AC;
 import java.nio.ByteBuffer;
 import org.slf4j.Logger;
